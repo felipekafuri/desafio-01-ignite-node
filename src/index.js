@@ -73,7 +73,7 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
 
   user.todos.push(todo)
 
-  return response.status(201).send()
+  return response.status(201).json(todo)
 
 });
 
@@ -114,7 +114,7 @@ app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
     done: true
   })
 
-  return response.status(200).send()
+  return response.status(200).json(todo)
 });
 
 app.delete('/todos/:id', checksExistsUserAccount, (request, response) => {
