@@ -55,7 +55,7 @@ app.get('/todos', checksExistsUserAccount, (request, response) => {
   // Complete aqui
   const { user } = request
 
-  return response.status(200).json(user.todos)
+  return response.json(user.todos)
  });
 
 app.post('/todos', checksExistsUserAccount, (request, response) => {
